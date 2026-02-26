@@ -1,7 +1,26 @@
 package edu.handong.csee.java.example.inheritance;
-
+/**
+ * The PolymorphismDemonstrator class demonstrates
+ * inheritance, polymorphism, upcasting, and downcasting
+ * in Java.
+ * 
+ * It shows how:
+ * - A Person reference can store Student and Undergraduate objects.
+ * - instanceof is used before downcasting.
+ * - Upcasting works automatically.
+ * 
+ * @author kanylyhour
+ * @version 1.0
+ */
 public class PolymorphismDemonstrator {
+	/**
+	 * Main method that runs the polymorphism demonstration.
+	 * 
+	 * @param args command-line arguments
+	 */
 	public static void main(String[] args) {
+		// Create an array of Person type
+		// Polymorphism: Person reference can store Student or Undergraduate objects
 		Person[] people = new Person[4];
 
 		people[0] = new Undergraduate("Cotty, Manny", 4910, 1);
@@ -9,7 +28,7 @@ public class PolymorphismDemonstrator {
 		people[2] = new Student("DeBanque, Robin", 8812);
 		people[3] = new Undergraduate("Bugg, June", 9901, 4);
 
-		for (Person p : people) {
+		for (Person p : people) {// Loop through each Person object
 			System.out.println("Student Name: " + p.getName());
 			
 			// we can call getLevel only in Undergraduate by casting p (Person).
@@ -20,7 +39,7 @@ public class PolymorphismDemonstrator {
 			}
 			System.out.println();
 		}
-		
+		// Demonstrating upcasting
 		Undergraduate ug = new Undergraduate("Nam, JC", 1111, 4);
 		Student st = ug;
 		Person ps = ug;
